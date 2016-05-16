@@ -1,0 +1,23 @@
+{
+  "name": "just-todo-it",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jduggan83/just-todo-it.git"
+  },
+  "author": "Jonathan Duggan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jduggan83/just-todo-it/issues"
+  },
+  "homepage": "https://github.com/jduggan83/just-todo-it"
+}
