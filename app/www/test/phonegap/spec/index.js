@@ -21,7 +21,7 @@ describe('app', function() {
         it('should bind deviceready', function() {
             runs(function() {
                 spyOn(app, 'onDeviceReady');
-                app.initialize();
+                phonegapApp.initialize();
                 helper.trigger(window.document, 'deviceready');
             });
 
@@ -38,7 +38,7 @@ describe('app', function() {
     describe('onDeviceReady', function() {
         it('should report that it fired', function() {
             spyOn(app, 'receivedEvent');
-            app.onDeviceReady();
+            phonegapApp.onDeviceReady();
             expect(app.receivedEvent).toHaveBeenCalledWith('deviceready');
         });
     });

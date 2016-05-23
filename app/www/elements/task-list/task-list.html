@@ -1,0 +1,30 @@
+<dom-module id="task-list">
+  <template>
+    <app-pouchdb-query
+      id="listTasks"
+      db-name="tasks"
+      selector="_id $gt 0"
+      fields='["_id", "name", "description", "completed"]'
+      sort='["_id"]'
+      data="{{tasks}}">
+    </app-pouchdb-query>
+    <template is="dom-repeat" items="{{tasks}}" as="task">
+      <a class="paper-item-link" href="{{baseUrl}}task/{{task._id}}">
+        <paper-item>
+          <paper-item-body two-line>
+            {{task.name}}
+          </paper-item-body>
+          <paper-icon-button hidden$="{{!task.completed}}" on-tap="uncomplete" icon="check-box"></paper-icon-button>
+          <paper-icon-button hidden$="{{task.completed}}" on-tap="complete" icon="check-box-outline-blank"></paper-icon-button>
+        </paper-item>
+      </a>
+    </template>
+  </template>
+  <script src="task-list.js"></script>
+  <style is="custom-style">
+    .paper-item-link {
+      color: inherit;
+      text-decoration: none;
+    }
+  </style>
+</dom-module>

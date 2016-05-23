@@ -38,27 +38,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     });
 
     page('/', function() {
-      app.route = 'home';
+      app.route = 'tasks';
     });
 
     page(app.baseUrl, function() {
-      app.route = 'home';
+      app.route = 'tasks';
     });
 
-    page('/users', function() {
-      app.route = 'users';
-    });
-
-    page('/users/:name', function(data) {
-      app.route = 'user-info';
+    page('/task/:taskId', function(data) {
+      app.route = 'task-edit';
       app.params = data.params;
     });
 
-    page('/contact', function() {
-      app.route = 'contact';
+    page('/addTask', function() {
+      app.route = 'task-add';
     });
 
-    // 404
+    // otherwise
     page('*', function() {
       page.redirect(app.baseUrl);
     });
