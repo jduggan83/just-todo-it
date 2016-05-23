@@ -18,7 +18,8 @@
       newTaskDescription: {
         type: String,
         notify: true      }
-    },behaviors: [
+    },
+    behaviors: [
       Polymer.AppPouchDBDatabaseBehavior,
       Polymer.PaperInputBehavior
     ],

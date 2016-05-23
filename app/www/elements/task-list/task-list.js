@@ -7,13 +7,25 @@
   Polymer({
     is: 'task-list',
     ready: function() {
-      console.log("fdf")
+      this.upsert = true;
+      this.dbName = "tasks";
     },
+    behaviors: [
+      Polymer.AppPouchDBDatabaseBehavior
+    ],
     complete: function(e) {
-      var model = e.model.set('item.completed', true);
+      this.updateTask(e.model, true);
     },
     uncomplete: function(e) {
-      var model = e.model.set('item.completed', false);
+      this.updateTask(e.model, false);
+    },
+    updateTask: function(model, completed){
+      var task = model.get('task');
+      model.set('task.completed', completed);
+      task.completed = completed;
+      this._post(task).then(function(){
+        console.log("here")
+      });
     }
   });
 })();

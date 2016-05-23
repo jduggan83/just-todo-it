@@ -138,34 +138,29 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     transform-origin: left center;
   }
 
-  /* Height of the scroll area */
-  .content {
-    height: 900px;
-  }
+ section[data-route="home"] paper-material {
+   @apply(--paper-font-body2);
+ }
 
-  section[data-route="home"] paper-material {
-    @apply(--paper-font-body2);
-  }
+ section[data-route="home"] paper-material .subhead {
+   @apply(--paper-font-subhead);
+ }
 
-  section[data-route="home"] paper-material .subhead {
-    @apply(--paper-font-subhead);
-  }
+ paper-material {
+   border-radius: 2px;
+   height: 100%;
+   padding: 16px 0 16px 0;
+   width: calc(98.66% - 16px);
+   margin: 16px auto;
+   background: white;
+ }
 
-  paper-material {
-    border-radius: 2px;
-    height: 100%;
-    padding: 16px 0 16px 0;
-    width: calc(98.66% - 16px);
-    margin: 16px auto;
-    background: white;
-  }
+ #toast .toast-hide-button {
+   color: #eeff41;
+   margin: 10px;
+ }
 
-  #toast .toast-hide-button {
-    color: #eeff41;
-    margin: 10px;
-  }
-
-  /* Breakpoints */
+ /* Breakpoints */
 
   /* Small */
   @media (max-width: 600px) {
