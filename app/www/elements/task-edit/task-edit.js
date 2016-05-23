@@ -22,8 +22,11 @@
     ],
     save: function(e) {
       this._post(this.results[0]).then(function(){
-          window.location.href = "/";
+        window.location.href = "/";
       });
+    },
+    cancel: function(e) {
+      window.location.href = "/";
     }
   });
 })();

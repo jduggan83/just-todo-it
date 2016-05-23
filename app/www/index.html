@@ -50,7 +50,14 @@
   <template is="dom-bind" id="app">
     <paper-header-panel class="flex">
       <paper-toolbar>
-        <div>Hello World!</div>
+        <span class="title">Just Todo It!!</span>
+        <a href="{{baseUrl}}" tabindex="-1">
+          <paper-icon-button icon="refresh" style="color: white;"></paper-icon-button>
+        </a>
+        <a href="{{baseUrl}}addTask" tabindex="-1">
+          <paper-icon-button icon="add" style="color: white;"></paper-icon-button>
+        </a>
+        <paper-progress class="middle fit" value="60"></paper-progress>
       </paper-toolbar>
         <!-- Main Content -->
         <div class="content">
@@ -74,8 +81,6 @@
         </div>
     </paper-header-panel>
   </template>
-
-
   <app-pouchdb-sync
     src="http://example.com:5984/tasks"
     target="tasks"
