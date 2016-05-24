@@ -12,7 +12,11 @@
       this.dbName = "tasks";
 
       document.addEventListener('task-list-refresh', function (e) {
-        me.refresh();
+          me.refresh();
+      });
+
+      document.addEventListener('task-list-delete-completed', function (e) {
+          me.deleteCompletedTasks(e);
       });
     },
     behaviors: [
@@ -29,11 +33,23 @@
       model.set('task.completed', completed);
       task.completed = completed;
       this._post(task).then(function(){
-        console.log("here");
+        console.log("task updated");
       });
     },
+    deleteCompletedTasks: function(e){
+      var me = this;
+
+      for(var i = 0; i<this.tasks.length; i++){
+        if(this.tasks[i].completed){
+          this._remove(this.tasks[i]).then(function(){
+            console.log("here");
+          });
+        }
+      };
+
+    },
     refresh: function(){
-      this.$.queryTasks.refresh();
+        this.$.queryTasks.refresh();
     }
   });
 })();

@@ -35,6 +35,10 @@
       }
     };
 
+    app.deleteCompletedTasks = function(){
+      app.fire('task-list-delete-completed');
+    };
+    
     // Routes
     page('*', function(ctx, next) {
       next();
