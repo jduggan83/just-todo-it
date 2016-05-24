@@ -16,3 +16,14 @@ A todo list app written using Polymer, Phonegap connecting to an NodeJS, MongoDB
     $ cd project-folder			# change to project directory
     $ npm build-app-android		# build the app for android				 
 	  $ npm start					# start the backend server
+	  
+	  
+	  Left todo
+	  -------------
+	  1. look into firing events - and use this for top menu talking to each component.
+	  2. Server syncing
+	  3. page transitions using - 
+	  4. try again using paper-checkbox
+	  5. improve package.json
+	  6. finalise this readme
+	  
