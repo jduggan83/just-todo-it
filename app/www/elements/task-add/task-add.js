@@ -14,6 +14,10 @@
       document.addEventListener('task-add-save', function (e) {
           me.save();
       });
+
+      document.addEventListener('task-add-reset', function (e) {
+        me.reset();
+      });
     },
     properties: {
       newTaskName: {
@@ -29,14 +33,19 @@
       Polymer.PaperInputBehavior
     ],
     save: function(e) {
+      var me = this;
       var task = {
         "name": this.newTaskName,
         description: this.newTaskDescription,
         completed: false
       };
       this._post(task).then(function(){
-        window.location.href = app.baseUrl;
+          app.showTasks();
       });
+    },
+    reset: function(){
+      this.$.newTaskName.value = ""
+      this.$.newTaskDescription.value = ""
     }
   });
 })();

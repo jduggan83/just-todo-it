@@ -17,6 +17,7 @@
       app.$.refreshButton.hidden = false;
       app.$.cancelTaskButton.hidden = true;
       app.$.saveTaskButton.hidden = true;
+      app.fire('task-list-refresh');
     };
 
     app.showTaskDetail = function(){
@@ -28,9 +29,9 @@
 
     app.saveTask = function(){
       if(app.route == 'task-edit'){
-        this.fire('task-edit-save');
+        app.fire('task-edit-save');
       }else{
-        this.fire('task-add-save');
+        app.fire('task-add-save');
       }
     };
 
@@ -54,6 +55,7 @@
     });
 
     page('/addTask', function() {
+      app.fire('task-add-reset');
       app.route = 'task-add';
       app.showTaskDetail();
     });

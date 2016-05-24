@@ -1,7 +1,7 @@
 <dom-module id="task-list">
   <template>
     <app-pouchdb-query
-      id="listTasks"
+      id="queryTasks"
       db-name="tasks"
       selector="_id $gt 0"
       fields='["_id", "name", "description", "completed"]'

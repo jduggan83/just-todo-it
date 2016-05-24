@@ -31,6 +31,9 @@
       this._post(task).then(function(){
         console.log("here");
       });
+    },
+    refresh: function(){
+      this.$.queryTasks.refresh();
     }
   });
 })();

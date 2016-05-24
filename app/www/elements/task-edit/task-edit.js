@@ -27,7 +27,7 @@
     ],
     save: function(e) {
       this._post(this.results[0]).then(function(){
-        window.location.href = app.baseUrl;
+        app.showTasks();
       });
     }
   });
