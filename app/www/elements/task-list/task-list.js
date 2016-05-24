@@ -7,8 +7,13 @@
   Polymer({
     is: 'task-list',
     ready: function() {
+      var me = this;
       this.upsert = true;
       this.dbName = "tasks";
+
+      document.addEventListener('task-list-refresh', function (e) {
+        me.refresh();
+      });
     },
     behaviors: [
       Polymer.AppPouchDBDatabaseBehavior
@@ -24,7 +29,7 @@
       model.set('task.completed', completed);
       task.completed = completed;
       this._post(task).then(function(){
-        console.log("here")
+        console.log("here");
       });
     }
   });

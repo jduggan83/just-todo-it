@@ -7,8 +7,13 @@
   Polymer({
     is: 'task-add',
     ready: function() {
+      var me = this;
       this.upsert = true;
       this.dbName = "tasks";
+
+      document.addEventListener('task-add-save', function (e) {
+          me.save();
+      });
     },
     properties: {
       newTaskName: {
@@ -30,7 +35,7 @@
         completed: false
       };
       this._post(task).then(function(){
-          window.location.href = "/";
+        window.location.href = app.baseUrl;
       });
     }
   });

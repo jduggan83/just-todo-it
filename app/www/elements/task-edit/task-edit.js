@@ -7,8 +7,13 @@
   Polymer({
     is: 'task-edit',
     ready: function() {
+      var me = this;
       this.upsert = true;
       this.dbName = "tasks";
+
+      document.addEventListener('task-edit-save', function (e) {
+          me.save();
+      });
     },
     properties: {
       taskId: {
@@ -22,11 +27,8 @@
     ],
     save: function(e) {
       this._post(this.results[0]).then(function(){
-        window.location.href = "/";
+        window.location.href = app.baseUrl;
       });
-    },
-    cancel: function(e) {
-      window.location.href = "/";
     }
   });
 })();

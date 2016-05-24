@@ -8,19 +8,19 @@
       sort='["_id"]'
       data="{{tasks}}">
     </app-pouchdb-query>
-    <template is="dom-repeat" items="{{tasks}}" as="task">
-        <paper-item>
-          <paper-icon-button hidden$="{{!task.completed}}" on-tap="uncomplete" icon="check-box"></paper-icon-button>
-          <paper-icon-button hidden$="{{task.completed}}" on-tap="complete" icon="check-box-outline-blank"></paper-icon-button>
-          <a class="paper-item-link" href="{{baseUrl}}task/{{task._id}}">
+      <template is="dom-repeat" items="{{tasks}}" as="task">
+          <paper-item>
+            <paper-icon-button hidden$="{{!task.completed}}" on-tap="uncomplete" icon="check-box"></paper-icon-button>
+            <paper-icon-button hidden$="{{task.completed}}" on-tap="complete" icon="check-box-outline-blank"></paper-icon-button>
+            <a class="paper-item-link" href="{{baseUrl}}task/{{task._id}}">
 
-                {{task.name}}
-              </paper-item-body>
-          </a>
+                  {{task.name}}
+                </paper-item-body>
+            </a>
 
-        </paper-item>
+          </paper-item>
 
-    </template>
+      </template>
   </template>
   <script src="task-list.js"></script>
   <style is="custom-style">

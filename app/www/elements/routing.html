@@ -1,13 +1,3 @@
-<!--
-@license
-Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
 <script src="../bower_components/page/page.js"></script>
 <script>
   window.addEventListener('WebComponentsReady', function() {
@@ -21,26 +11,51 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       page.base(app.baseUrl.replace(/\/$/, ''));
     }
 
+    app.showTasks = function(){
+      app.route = 'tasks';
+      app.$.addTaskButton.hidden = false;
+      app.$.refreshButton.hidden = false;
+      app.$.cancelTaskButton.hidden = true;
+      app.$.saveTaskButton.hidden = true;
+    };
+
+    app.showTaskDetail = function(){
+      app.$.addTaskButton.hidden = true;
+      app.$.refreshButton.hidden = true;
+      app.$.cancelTaskButton.hidden = false;
+      app.$.saveTaskButton.hidden = false;
+    };
+
+    app.saveTask = function(){
+      if(app.route == 'task-edit'){
+        this.fire('task-edit-save');
+      }else{
+        this.fire('task-add-save');
+      }
+    };
+
     // Routes
     page('*', function(ctx, next) {
       next();
     });
 
     page('/', function() {
-      app.route = 'tasks';
+      app.showTasks();
     });
 
     page(app.baseUrl, function() {
-      app.route = 'tasks';
+      app.showTasks();
     });
 
     page('/task/:taskId', function(data) {
       app.route = 'task-edit';
       app.params = data.params;
+      app.showTaskDetail();
     });
 
     page('/addTask', function() {
       app.route = 'task-add';
+      app.showTaskDetail();
     });
 
     // otherwise
@@ -53,5 +68,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       hashbang: true
     });
 
+    // Sets app default base URL
+    app.baseUrl = '/';
+
+    // Listen for template bound event to know when bindings
+    app.addEventListener('dom-change', function() {
+      console.log('Our app is ready to rock!');
+    });
   });
 </script>
