@@ -25,9 +25,10 @@
       Polymer.AppPouchDBDatabaseBehavior,
       Polymer.PaperInputBehavior
     ],
-    save: function(e) {
+    save: function() {
       this._post(this.results[0]).then(function(){
         app.showTasks();
+
       });
     }
   });

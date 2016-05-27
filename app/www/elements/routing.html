@@ -38,7 +38,11 @@
     app.deleteCompletedTasks = function(){
       app.fire('task-list-delete-completed');
     };
-    
+
+    app.refreshTasks = function(){
+      app.fire('task-list-refresh');
+    };
+
     // Routes
     page('*', function(ctx, next) {
       next();
@@ -62,6 +66,10 @@
       app.fire('task-add-reset');
       app.route = 'task-add';
       app.showTaskDetail();
+    });
+
+    page('/refresh', function() {
+      app.fire('task-list-refresh');
     });
 
     // otherwise

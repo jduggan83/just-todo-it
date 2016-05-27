@@ -11,7 +11,7 @@
       this.upsert = true;
       this.dbName = "tasks";
 
-      document.addEventListener('task-add-save', function (e) {
+     document.addEventListener('task-add-save', function (e) {
           me.save();
       });
 
@@ -32,8 +32,7 @@
       Polymer.AppPouchDBDatabaseBehavior,
       Polymer.PaperInputBehavior
     ],
-    save: function(e) {
-      var me = this;
+    save: function() {
       var task = {
         "name": this.newTaskName,
         description: this.newTaskDescription,
@@ -44,8 +43,8 @@
       });
     },
     reset: function(){
-      this.$.newTaskName.value = ""
-      this.$.newTaskDescription.value = ""
+      this.$.newTaskName.value = "";
+      this.$.newTaskDescription.value = "";
     }
   });
 })();

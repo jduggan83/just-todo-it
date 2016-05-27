@@ -52,9 +52,7 @@
       <paper-toolbar>
         <span class="title">Just Todo It</span>
 
-        <a href="{{baseUrl}}" tabindex="-1">
-          <paper-icon-button icon="refresh" id="refreshButton" style="color: white;"></paper-icon-button>
-        </a>
+        <paper-icon-button icon="refresh" id="refreshButton" on-tap="refreshTasks"></paper-icon-button>
         <a href="{{baseUrl}}" tabindex="-1">
           <paper-icon-button icon="close" id="cancelTaskButton"  style="color: white;"></paper-icon-button>
         </a>
@@ -86,11 +84,11 @@
         </div>
     </paper-header-panel>
   </template>
-  <!--<app-pouchdb-sync
+  <app-pouchdb-sync
     src="tasks"
-    target="https://jduggan83.cloudant.com/tasks"
+    target="https://jduggan83:morten83@jduggan83.cloudant.com/tasks"
     bidirectional>
-  </app-pouchdb-sync>-->
+  </app-pouchdb-sync>
   <script src="elements/app.js"></script>
   <!-- endbuild-->
 
