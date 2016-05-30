@@ -17,14 +17,27 @@
       app.$.refreshButton.hidden = false;
       app.$.cancelTaskButton.hidden = true;
       app.$.saveTaskButton.hidden = true;
+      app.$.editTaskButton.hidden = true;
+      app.$.backButton.hidden = true;
       app.fire('task-list-refresh');
     };
 
-    app.showTaskDetail = function(){
+    app.showTaskView = function(){
+      app.$.addTaskButton.hidden = true;
+      app.$.refreshButton.hidden = true;
+      app.$.cancelTaskButton.hidden = true;
+      app.$.saveTaskButton.hidden = true;
+      app.$.editTaskButton.hidden = false;
+      app.$.backButton.hidden = false;
+    };
+	
+	app.showTaskEdit = function(){
       app.$.addTaskButton.hidden = true;
       app.$.refreshButton.hidden = true;
       app.$.cancelTaskButton.hidden = false;
       app.$.saveTaskButton.hidden = false;
+      app.$.editTaskButton.hidden = true;
+      app.$.backButton.hidden = true;
     };
 
     app.saveTask = function(){
@@ -57,15 +70,21 @@
     });
 
     page('/task/:taskId', function(data) {
+      app.route = 'task-view';
+      app.params = data.params;
+      app.showTaskView();
+    });
+	
+	page('/task/:taskId/edit', function(data) {
       app.route = 'task-edit';
       app.params = data.params;
-      app.showTaskDetail();
+      app.showTaskEdit();
     });
 
-    page('/addTask', function() {
+    page('/task/add', function() {
       app.fire('task-add-reset');
       app.route = 'task-add';
-      app.showTaskDetail();
+      app.showTaskEdit();
     });
 
     page('/refresh', function() {
