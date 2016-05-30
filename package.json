@@ -1,11 +1,7 @@
 {
   "name": "just-todo-it",
   "version": "1.0.0",
-  "description": "A todo list app written using Polymer, Phonegap connecting to an NodeJS, MongoDB backend.",
-  "scripts": {
-    "debug": "cd app && phonegap serve",
-    "wha": "bower install && cd app && phonegap build android"
-  },
+  "description": "A todo list app written using Polymer, Phonegap, a local pouchDB which syncs to a couchDB on cloudant.com",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jduggan83/just-todo-it.git"

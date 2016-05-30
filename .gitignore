@@ -6,3 +6,4 @@ bower_components
 platforms
 .idea
 /app/plugins
+/*.log
