@@ -6,11 +6,10 @@ A todo list app written using Polymer, Phonegap, and a local pouchDB which syncs
 
 - [Install node.js](http://nodejs.org/) version `>=0.10.x`
     
-    $ npm install -g phonegap
-    $ npm install -g bower
-
 #### Install
 
+    $ npm install -g phonegap
+    $ npm install -g bower
     $ bower install
 
 #### Debugging the app
@@ -21,12 +20,12 @@ A todo list app written using Polymer, Phonegap, and a local pouchDB which syncs
 #### Building the app
 
     $ cd app
-    $ phonegap build android    #apk file goes to app/platforms android
+    $ phonegap build android    #apk file goes to app/platforms/android
     $ phonegap build ios        #on an ios environment only
     
 	  
 #### Remaining Work
-	-------------
+
 - Input validation on save
 - strikethrough on completed items
 - page transitions using https://elements.polymer-project.org/elements/neon-animation?view=demo:demo/index.htm&active=neon-animated-pages
