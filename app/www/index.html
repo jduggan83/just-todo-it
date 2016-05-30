@@ -56,10 +56,17 @@
         <a href="{{baseUrl}}" tabindex="-1">
           <paper-icon-button icon="close" id="cancelTaskButton"  style="color: white;"></paper-icon-button>
         </a>
-        <a href="{{baseUrl}}addTask" tabindex="-1">
+        <a href="{{baseUrl}}task/add" tabindex="-1">
           <paper-icon-button icon="add" style="color: white;" id="addTaskButton"></paper-icon-button>
         </a>
         <paper-icon-button icon="check" id="saveTaskButton" on-tap="saveTask"></paper-icon-button>
+		<a href="{{baseUrl}}" tabindex="-1">
+          <paper-icon-button icon="close" id="cancelTaskButton"  style="color: white;"></paper-icon-button>
+        </a>
+		<a href="{{baseUrl}}" tabindex="-1">
+          <paper-icon-button icon="arrow-back" id="backButton"  style="color: white;"></paper-icon-button>
+        </a>
+        <paper-icon-button icon="create" id="editTaskButton" on-tap="editTask"></paper-icon-button>
         <paper-progress class="middle fit" value="60"></paper-progress>
       </paper-toolbar>
         <!-- Main Content -->
@@ -78,6 +85,11 @@
             <section data-route="task-add">
               <paper-material elevation="1">
                 <task-add></task-add>
+              </paper-material>
+            </section>
+            <section data-route="task-view">
+              <paper-material elevation="1">
+                <task-view></task-view>
               </paper-material>
             </section>
           </iron-pages>

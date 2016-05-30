@@ -1,0 +1,27 @@
+<dom-module id="task-view">
+  <template>
+    <app-pouchdb-confict-resolution
+      strategy="firstWriteWins">
+      </app-pouchdb-conflict-resolution>
+      <app-pouchdb-query
+        id="findTask"
+        db-name="tasks"
+        selector="_id $eq '{{taskId}}'"
+        fields='["_id", "name", "description", "completed"]'
+        sort='["_id"]'
+        data="{{results}}",
+        limit="1">
+      </app-pouchdb-query>
+      <form is="iron-form" >
+        <template is="dom-repeat" items="{{results}}" as="task">
+          <paper-item>
+			<paper-item-body two-line>
+			  <div>{{task.name}}</div>
+			  <div secondary>{{task.description}}</div>
+			</paper-item-body>
+		  </paper-item>
+        </template>
+      </form>
+  </template>
+  <script src="task-view.js"></script>
+</dom-module>
