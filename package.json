@@ -1,23 +1,26 @@
 {
   "name": "just-todo-it",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "express": "^4.13.4"
-  },
-  "devDependencies": {},
+  "description": "A todo list app written using Polymer, Phonegap connecting to an NodeJS, MongoDB backend.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "debug": "cd app && phonegap serve",
+    "wha": "bower install && cd app && phonegap build android"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jduggan83/just-todo-it.git"
+    "url": "git+https://github.com/jduggan83/just-todo-it.git"
   },
   "author": "Jonathan Duggan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jduggan83/just-todo-it/issues"
   },
-  "homepage": "https://github.com/jduggan83/just-todo-it"
+  "homepage": "https://github.com/jduggan83/just-todo-it",
+  "main": "index.js",
+  "keywords": [
+    "phonegap",
+    "polymer",
+    "couchdb",
+    "pouchdb"
+  ]
 }
