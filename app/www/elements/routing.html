@@ -30,8 +30,8 @@
       app.$.editTaskButton.hidden = false;
       app.$.backButton.hidden = false;
     };
-	
-	app.showTaskEdit = function(){
+
+	  app.showTaskEdit = function(){
       app.$.addTaskButton.hidden = true;
       app.$.refreshButton.hidden = true;
       app.$.cancelTaskButton.hidden = false;
@@ -69,21 +69,21 @@
       app.showTasks();
     });
 
+    page('/task/add', function() {
+      app.fire('task-add-reset');
+      app.route = 'task-add';
+      app.showTaskEdit();
+    });
+
     page('/task/:taskId', function(data) {
       app.route = 'task-view';
       app.params = data.params;
       app.showTaskView();
     });
-	
-	page('/task/:taskId/edit', function(data) {
+
+	  page('/task/:taskId/edit', function(data) {
       app.route = 'task-edit';
       app.params = data.params;
-      app.showTaskEdit();
-    });
-
-    page('/task/add', function() {
-      app.fire('task-add-reset');
-      app.route = 'task-add';
       app.showTaskEdit();
     });
 
@@ -92,7 +92,7 @@
     });
 
     // otherwise
-    page('*', function() {
+    page('*', function(data) {
       page.redirect(app.baseUrl);
     });
 

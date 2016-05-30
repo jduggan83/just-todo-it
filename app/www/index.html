@@ -31,10 +31,6 @@
   <!-- Tile icon for Win8 (144x144) -->
   <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
 
-  <!-- build:css styles/main.css -->
-  <link rel="stylesheet" href="css/main.css">
-  <!-- endbuild-->
-
   <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
   <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <!-- endbuild -->
@@ -51,22 +47,21 @@
     <paper-header-panel class="flex">
       <paper-toolbar>
         <span class="title">Just Todo It</span>
-
-        <paper-icon-button icon="refresh" id="refreshButton" on-tap="refreshTasks"></paper-icon-button>
         <a href="{{baseUrl}}" tabindex="-1">
           <paper-icon-button icon="close" id="cancelTaskButton"  style="color: white;"></paper-icon-button>
         </a>
+        <a href="{{baseUrl}}" tabindex="-1">
+          <paper-icon-button icon="arrow-back" id="backButton"  style="color: white;"></paper-icon-button>
+        </a>
+        <paper-icon-button icon="refresh" id="refreshButton" on-tap="refreshTasks"></paper-icon-button>
         <a href="{{baseUrl}}task/add" tabindex="-1">
           <paper-icon-button icon="add" style="color: white;" id="addTaskButton"></paper-icon-button>
         </a>
         <paper-icon-button icon="check" id="saveTaskButton" on-tap="saveTask"></paper-icon-button>
-		<a href="{{baseUrl}}" tabindex="-1">
-          <paper-icon-button icon="close" id="cancelTaskButton"  style="color: white;"></paper-icon-button>
+
+        <a href="{{baseUrl}}task/{{params.taskId}}/edit" tabindex="-1">
+          <paper-icon-button icon="create" style="color: white;" id="editTaskButton"></paper-icon-button>
         </a>
-		<a href="{{baseUrl}}" tabindex="-1">
-          <paper-icon-button icon="arrow-back" id="backButton"  style="color: white;"></paper-icon-button>
-        </a>
-        <paper-icon-button icon="create" id="editTaskButton" on-tap="editTask"></paper-icon-button>
         <paper-progress class="middle fit" value="60"></paper-progress>
       </paper-toolbar>
         <!-- Main Content -->
@@ -89,18 +84,18 @@
             </section>
             <section data-route="task-view">
               <paper-material elevation="1">
-                <task-view></task-view>
+                <task-view task-id="{{params.taskId}}"></task-view>
               </paper-material>
             </section>
           </iron-pages>
         </div>
     </paper-header-panel>
   </template>
-  <app-pouchdb-sync
+  <!--<app-pouchdb-sync
     src="tasks"
     target="https://jduggan83:morten83@jduggan83.cloudant.com/tasks"
     bidirectional>
-  </app-pouchdb-sync>
+  </app-pouchdb-sync>-->
   <script src="elements/app.js"></script>
   <!-- endbuild-->
 
