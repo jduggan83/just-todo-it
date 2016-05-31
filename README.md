@@ -15,7 +15,7 @@ A todo list app written using Polymer, Phonegap, and a local pouchDB which syncs
 #### Debugging the app
 
     $ cd app
-    $ phonegapp serve
+    $ phonegap serve
     
 #### Building the app
 
