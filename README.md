@@ -15,7 +15,7 @@ A todo list app written using Polymer, Phonegap, and a local pouchDB which syncs
 #### Debugging the app
 
     $ cd app
-    $ phonegapp serve
+    $ phonegap serve
     
 #### Building the app
 
@@ -27,9 +27,10 @@ A todo list app written using Polymer, Phonegap, and a local pouchDB which syncs
 #### Remaining Work
 
 - Input validation on save
+- clear completed: Add index on deleted (or completed), and attempt to query by it
+	 
+#### Nice to have
+
 - strikethrough on completed items
 - page transitions using https://elements.polymer-project.org/elements/neon-animation?view=demo:demo/index.htm&active=neon-animated-pages
 - iron-ripple on list button
-- clear completed: Add index on deleted (or completed), and attempt to query by it
-	 
-	  
