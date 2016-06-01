@@ -10,6 +10,7 @@
     </app-pouchdb-query>
       <template is="dom-repeat" items="{{tasks}}" as="task">
           <paper-item style="border-bottom: 1px solid #E4E4E4">
+            <paper-ripple></paper-ripple>
             <paper-icon-button hidden$="{{!task.completed}}" on-tap="uncomplete" icon="check-box" style="color: #3f51b5;"></paper-icon-button>
             <paper-icon-button hidden$="{{task.completed}}" on-tap="complete" style="color: #3f51b5;" icon="check-box-outline-blank"></paper-icon-button>
             <a class="paper-item-link" href="{{baseUrl}}task/{{task._id}}" style="width: 100%">

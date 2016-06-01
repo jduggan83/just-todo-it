@@ -15,6 +15,7 @@
       <form is="iron-form" >
         <template is="dom-repeat" items="{{results}}" as="task">
           <paper-item>
+            <paper-ripple></paper-ripple>
             <paper-item-body two-line>
               <div>{{task.name}}</div>
               <div secondary>{{task.description}}</div>
