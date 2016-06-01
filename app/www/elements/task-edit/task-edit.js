@@ -23,7 +23,8 @@
     },
     behaviors: [
       Polymer.AppPouchDBDatabaseBehavior,
-      Polymer.PaperInputBehavior
+      Polymer.PaperInputBehavior,
+      Polymer.AppStorageBehavior
     ],
     save: function() {
       this._post(this.results[0]).then(function(){

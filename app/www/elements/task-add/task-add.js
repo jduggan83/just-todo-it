@@ -30,7 +30,8 @@
     },
     behaviors: [
       Polymer.AppPouchDBDatabaseBehavior,
-      Polymer.PaperInputBehavior
+      Polymer.PaperInputBehavior,
+      Polymer.AppStorageBehavior
     ],
     save: function() {
       var task = {

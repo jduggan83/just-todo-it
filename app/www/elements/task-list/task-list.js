@@ -20,7 +20,8 @@
       });
     },
     behaviors: [
-      Polymer.AppPouchDBDatabaseBehavior
+      Polymer.AppPouchDBDatabaseBehavior,
+      Polymer.AppStorageBehavior
     ],
     complete: function(e) {
       this.updateTask(e.model, true);
