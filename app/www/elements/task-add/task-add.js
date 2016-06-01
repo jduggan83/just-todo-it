@@ -33,6 +33,11 @@
       Polymer.AppStorageBehavior
     ],
     save: function() {
+      if(this.newTaskName == null || this.newTaskName == ""){
+        this.$.newTaskName.invalid = true;
+        return;
+      }
+
       var task = {
         "name": this.newTaskName,
         description: this.newTaskDescription,
@@ -45,6 +50,7 @@
     reset: function(){
       this.$.newTaskName.value = "";
       this.$.newTaskDescription.value = "";
+      this.$.newTaskName.invalid = false;
     }
   });
 })();

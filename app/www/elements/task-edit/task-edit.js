@@ -23,10 +23,12 @@
     },
     behaviors: [
       Polymer.AppPouchDBDatabaseBehavior,
-      Polymer.PaperInputBehavior,
       Polymer.AppStorageBehavior
     ],
     save: function() {
+      if(this.results[0].name  == null || this.results[0].name == ""){
+        return;
+      }
       this._post(this.results[0]).then(function(){
         app.showTasks();
 

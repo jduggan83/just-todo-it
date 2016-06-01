@@ -12,7 +12,7 @@
         data="{{results}}",
         limit="1">
       </app-pouchdb-query>
-      <form is="iron-form" >
+      <form is="iron-form" id="editForm">
         <template is="dom-repeat" items="{{results}}" as="task">
           <paper-input name="name" label="name" bind-value="{{task.name}}" value="{{task.name}}"></paper-input>
           <paper-input name="description" label="description" bind-value="{{task.description}}" value="{{task.description}}"></paper-input>
