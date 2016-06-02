@@ -27,5 +27,3 @@ A todo list app written using Polymer, Phonegap, and a local pouchDB which syncs
 #### Remaining Work
 
 - clear completed: Add index on deleted (or completed), and attempt to query by it
-- page transitions using https://github.com/PolymerElements/polymer-starter-kit/blob/master/docs/neon-animated-pages.md
-- Use observer for updating when tasks are refreshed - if not items are there
