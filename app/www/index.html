@@ -65,28 +65,28 @@
       </paper-toolbar>
         <!-- Main Content -->
         <div class="content">
-          <iron-pages attr-for-selected="data-route" selected="{{route}}">
-            <section data-route="tasks">
+          <neon-animated-pages attr-for-selected="data-route" selected="{{route}}" entry-animation="slide-from-bottom-animation" exit-animation="fade-out-animation">
+            <neon-animatable data-route="tasks">
               <paper-material elevation="1">
                 <task-list></task-list>
               </paper-material>
-            </section>
-            <section data-route="task-edit">
+            </neon-animatable>
+			<neon-animatable data-route="task-edit">
               <paper-material elevation="1">
                 <task-edit task-id="{{params.taskId}}"></task-edit>
               </paper-material>
-            </section>
-            <section data-route="task-add">
+            </neon-animatable>
+			<neon-animatable data-route="task-add">
               <paper-material elevation="1">
                 <task-add></task-add>
               </paper-material>
-            </section>
-            <section data-route="task-view">
+            </neon-animatable>
+			<neon-animatable data-route="task-view">
               <paper-material elevation="1">
                 <task-view task-id="{{params.taskId}}"></task-view>
               </paper-material>
-            </section>
-          </iron-pages>
+            </neon-animatable>
+          </neon-animated-pages>
         </div>
     </paper-header-panel>
   </template>

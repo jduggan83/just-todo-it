@@ -141,17 +141,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     transform-origin: left center;
   }
 
- section[data-route="home"] paper-material {
+ neon-animatable[data-route="home"] paper-material {
    @apply(--paper-font-body2);
  }
 
- section[data-route="home"] paper-material .subhead {
+ neon-animatable[data-route="home"] paper-material .subhead {
    @apply(--paper-font-subhead);
  }
 
  paper-material {
    border-radius: 2px;
-   height: 100%;
    padding: 16px 0 16px 0;
    width: calc(98.66% - 16px);
    margin: 16px auto;
@@ -193,7 +192,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       border-right: 1px solid rgba(0, 0, 0, 0.14);
     }
 
-    iron-pages {
+    neon-animated-pages > * {
       padding: 48px 62px;
     }
 
@@ -204,6 +203,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       padding-right: 30px;
     }
 
+  }
+  
+  neon-animated-pages {
+   height: 100%;
   }
 
   /* Material Design Adaptive Breakpoints */
