@@ -23,6 +23,16 @@
       Polymer.AppPouchDBDatabaseBehavior,
       Polymer.AppStorageBehavior
     ],
+    properties: {
+      tasks: {
+        type: Array,
+        observer: 'updatedTasks'
+      },
+      empty: {
+        type: Boolean,
+        value: true
+      }
+    },
     complete: function(e) {
       this.updateTask(e.model, true);
     },
@@ -36,6 +46,9 @@
       this._post(task).then(function(){
         console.log("task updated");
       });
+    },
+    updatedTasks: function(){
+      this.empty = (this.tasks.length ==0);
     },
     deleteCompletedTasks: function(e){
       var me = this;

@@ -17,7 +17,14 @@
               <paper-item-body>&nbsp;&nbsp;{{task.name}}</paper-item-body>
             </a>
           </paper-item>
+
       </template>
+      <paper-item hidden$="{{!empty}}">
+        <paper-ripple></paper-ripple>
+        <paper-item-body two-line>
+          <div secondary>Nothing To do...</div>
+        </paper-item-body>
+      </paper-item>
   </template>
   <script src="task-list.js"></script>
   <style is="custom-style">
