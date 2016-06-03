@@ -27,3 +27,7 @@ A todo list app written using Polymer, Phonegap, and a local pouchDB which syncs
 #### Remaining Work
 
 - clear completed: Add index on deleted (or completed), and attempt to query by it
+- message to user on create/update of a task
+- strikethrough on task on completed
+- logo not loading in app
+- All of description not showing on view task
